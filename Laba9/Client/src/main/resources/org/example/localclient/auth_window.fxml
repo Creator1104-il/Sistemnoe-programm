@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="350.0" prefHeight="389.0" prefWidth="371.0" spacing="10" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.localclient.AuthController">
+    <padding>
+        <Insets bottom="15" left="15" right="15" top="15" />
+    </padding>
+    <Label maxWidth="350.0" text="Введите IP и порт сервера:">
+      <font>
+         <Font size="18.0" />
+      </font></Label>
+    <TextField fx:id="ipField" maxWidth="350.0" promptText="IP сервера">
+      <font>
+         <Font size="18.0" />
+      </font></TextField>
+    <TextField fx:id="portField" maxWidth="350.0" promptText="Порт">
+      <font>
+         <Font size="18.0" />
+      </font></TextField>
+    <Label maxWidth="350.0" text="Введите имя и пароль:">
+      <font>
+         <Font size="18.0" />
+      </font></Label>
+    <TextField fx:id="usernameField" maxWidth="350.0" promptText="Имя пользователя">
+      <font>
+         <Font size="18.0" />
+      </font></TextField>
+    <PasswordField fx:id="passwordField" maxWidth="350.0" promptText="Пароль">
+      <font>
+         <Font size="18.0" />
+      </font></PasswordField>
+    <Button fx:id="connectButton" maxWidth="350.0" onAction="#onConnectClicked" text="Подключиться">
+      <font>
+         <Font size="18.0" />
+      </font></Button>
+    <Label fx:id="statusLabel" maxWidth="350.0" textFill="red" />
+</VBox>

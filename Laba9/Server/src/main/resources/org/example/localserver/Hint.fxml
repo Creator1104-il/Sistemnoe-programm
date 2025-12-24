@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" minHeight="360.0" minWidth="580.0" spacing="15.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.localserver.HintController">
+   <children>
+      <Label fx:id="label" maxWidth="400.0" text="Hint" textAlignment="JUSTIFY" wrapText="true" />
+      <Button mnemonicParsing="false" onAction="#onExitClicked" text="Закрыть" />
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.localserver.ServerWindowController">
+   <children>
+      <HBox spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onHintButtonClicked" text="Посмотреть подсказку">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onConnectionInfoClicked" text="Показать\скрыть подключение">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></Button>
+            <Label fx:id="ConnectInfo" textAlignment="RIGHT" visible="false">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <TabPane VBox.vgrow="ALWAYS">
+         <tabs>
+             <Tab closable="false" text="Логи чата">
+                  <content>
+                      <VBox>
+                          <HBox spacing="5.0">
+                              <CheckBox fx:id="checkLog" nodeOrientation="RIGHT_TO_LEFT" onAction="#setNeedToWrite" selected="true" text="Сохранять логи в файл">
+                        </CheckBox>
+                        <Label fx:id="statusLabel" />
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin>
+                        <padding>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                          </HBox>
+                          <ListView fx:id="logListView" VBox.vgrow="ALWAYS">
+                    </ListView>
+                      </VBox>
+                  </content>
+             </Tab>
+            <Tab closable="false" text="Работа с пользователями">
+               <content>
+                  <BorderPane>
+                      <top>
+                          <HBox spacing="10.0">
+                              <Label text="Поиск:" />
+                              <TextField fx:id="fieldSearch" promptText="Введите имя пользователя" />
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                          </HBox>
+                      </top>
+                  <center>
+                      <TableView fx:id="tableUsers" BorderPane.alignment="TOP_LEFT">
+                          <columns>
+                              <TableColumn fx:id="colUsername" prefWidth="250" text="Имя пользователя" />
+                              <TableColumn fx:id="colPassword" prefWidth="250" text="Пароль" />
+                          </columns>
+                      </TableView>
+                  </center>
+                  <bottom>
+                      <VBox>
+                          <HBox spacing="10.0">
+                              <TextField fx:id="fieldUsername" promptText="Имя пользователя" />
+                              <TextField fx:id="fieldPassword" promptText="Пароль" />
+                              <padding>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                          </HBox>
+                          <HBox spacing="10.0">
+                              <Button onAction="#onAddUser" text="Добавить" />
+                              <Button onAction="#onUpdatePassword" text="Изменить пароль" />
+                              <Button onAction="#onDeleteUser" text="Удалить" />
+                              <padding>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </padding>
+                          </HBox>
+                      </VBox>
+                  </bottom>
+                  </BorderPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</VBox>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600" xmlns="http://javafx.com/javafx/12.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.localclient.ChatController">
+
+    <!-- Верхнее меню -->
+    <top>
+        <MenuBar>
+            <Menu text="Информация">
+                <MenuItem onAction="#onAboutConnectedInfo" text="Подключение" />
+            <MenuItem mnemonicParsing="false" onAction="#onHintClicked" text="Подсказка" />
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <!-- Центр: сообщения -->
+    <center>
+        <ListView fx:id="chatList" />
+    </center>
+    <!-- Нижняя панель: поле ввода и кнопка -->
+    <bottom>
+        <HBox spacing="5.0">
+            <TextField fx:id="inputField" prefWidth="511.0" promptText="Введите сообщение" HBox.hgrow="ALWAYS">
+            <font>
+               <Font size="14.0" />
+            </font></TextField>
+            <Button fx:id="sendButton" minWidth="-Infinity" text="Отправить">
+            <font>
+               <Font size="14.0" />
+            </font></Button>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+        </HBox>
+    </bottom>
+</BorderPane>
